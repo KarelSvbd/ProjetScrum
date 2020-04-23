@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>50</y>
-      <w>100</w>
-      <h>130</h>
+      <x>48</x>
+      <y>256</y>
+      <w>80</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>ARTICLES
 -
@@ -22,12 +22,12 @@ disponibilite</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>290</y>
-      <w>100</w>
-      <h>90</h>
+      <x>16</x>
+      <y>432</y>
+      <w>80</w>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>Baskets
+    <panel_attributes>BASKETS
 -
 _idArticle_
 pointure
@@ -38,41 +38,156 @@ couleur
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
-      <y>170</y>
-      <w>110</w>
-      <h>140</h>
+      <x>48</x>
+      <y>352</y>
+      <w>32</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>20.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>60</y>
-      <w>100</w>
-      <h>80</h>
+      <x>320</x>
+      <y>264</y>
+      <w>80</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Client
 -
-idClient
+_idClient_
+nomUtilisateur
+mdpClient
+prenomClient
 nomClient
-mdpClient</panel_attributes>
+numTéléphone
+adresseEmail</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
-      <y>80</y>
-      <w>250</w>
-      <h>50</h>
+      <x>120</x>
+      <y>280</y>
+      <w>216</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
-m2=1..1
+m2=0..*
 Achète</panel_attributes>
-    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>112</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Panier
+-
+_*idArticle*_
+_*idClient*_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>184</y>
+      <w>24</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>592</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>METHODE_PAIEMENT
+-
+_idMethodePaiement_
+nomMethodePaiement</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>592</y>
+      <w>80</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>ADRESSE
+-
+_idAdresse_
+pays
+ville
+codePostal
+rue
+bâtiment
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>400</y>
+      <w>192</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..1
+Utilise</panel_attributes>
+    <additional_attributes>10.0;240.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>504</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>RESIDANCE
+-
+_*idClient*_
+_*idAdresse*_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>400</y>
+      <w>56</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..*
+habite</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>512</y>
+      <w>144</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
