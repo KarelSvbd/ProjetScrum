@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
-      <y>256</y>
+      <x>280</x>
+      <y>208</y>
       <w>80</w>
-      <h>104</h>
+      <h>152</h>
     </coordinates>
     <panel_attributes>ARTICLES
 -
@@ -16,41 +16,44 @@ nomArticle
 typeArticle
 quantite
 prix
-disponibilite</panel_attributes>
+disponibilite
+couleur
+description
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>16</x>
-      <y>432</y>
-      <w>80</w>
+      <x>0</x>
+      <y>176</y>
+      <w>96</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>BASKETS
 -
 _idArticle_
 pointure
-couleur
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>48</x>
-      <y>352</y>
-      <w>32</w>
-      <h>96</h>
+      <x>88</x>
+      <y>200</y>
+      <w>208</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>20.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>240.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>264</y>
+      <x>552</x>
+      <y>216</y>
       <w>80</w>
       <h>144</h>
     </coordinates>
@@ -68,8 +71,8 @@ adresseEmail</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>280</y>
+      <x>352</x>
+      <y>232</y>
       <w>216</w>
       <h>40</h>
     </coordinates>
@@ -82,8 +85,8 @@ Achète</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>112</y>
+      <x>400</x>
+      <y>64</y>
       <w>80</w>
       <h>80</h>
     </coordinates>
@@ -96,8 +99,8 @@ _*idClient*_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>184</y>
+      <x>432</x>
+      <y>136</y>
       <w>24</w>
       <h>128</h>
     </coordinates>
@@ -107,8 +110,8 @@ _*idClient*_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>112</x>
-      <y>592</y>
+      <x>344</x>
+      <y>544</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -121,8 +124,8 @@ nomMethodePaiement</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>328</x>
-      <y>592</y>
+      <x>560</x>
+      <y>544</y>
       <w>80</w>
       <h>104</h>
     </coordinates>
@@ -133,15 +136,15 @@ pays
 ville
 codePostal
 rue
-bâtiment
+complément
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>400</y>
+      <x>400</x>
+      <y>352</y>
       <w>192</w>
       <h>208</h>
     </coordinates>
@@ -154,8 +157,8 @@ Utilise</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>488</x>
-      <y>504</y>
+      <x>720</x>
+      <y>456</y>
       <w>80</w>
       <h>80</h>
     </coordinates>
@@ -168,8 +171,8 @@ _*idAdresse*_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>400</y>
+      <x>592</x>
+      <y>352</y>
       <w>56</w>
       <h>208</h>
     </coordinates>
@@ -182,12 +185,66 @@ habite</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>512</y>
+      <x>592</x>
+      <y>464</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;..</panel_attributes>
     <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>256</y>
+      <w>96</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>SURVÊTEMENT
+-
+_idArticle_
+taille
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>88</x>
+      <y>256</y>
+      <w>208</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>336</y>
+      <w>96</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>CASQUETTE
+-
+_idArticle_
+taille
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>88</x>
+      <y>288</y>
+      <w>208</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>
