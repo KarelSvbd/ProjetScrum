@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Accueil</title>
+        <title>A-Remplacer</title>
         <link href="Site_DropShipping/CSS/Style.css" rel="stylesheet" type="text/css"/>
         
     </head>
