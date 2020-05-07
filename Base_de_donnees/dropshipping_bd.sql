@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 23 Avril 2020 à 10:58
+-- Généré le :  Jeu 07 Mai 2020 à 09:38
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.4.24
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `dropshipping_bd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adresse`
+--
+
+CREATE TABLE IF NOT EXISTS `adresse` (
+  `idAdresse` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pays` text NOT NULL,
+  `ville` text NOT NULL,
+  `codePostal` varchar(20) NOT NULL,
+  `rue` text NOT NULL,
+  `complément` text,
+  PRIMARY KEY (`idAdresse`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -90,8 +106,36 @@ CREATE TABLE IF NOT EXISTS `client` (
   `nomClient` varchar(50) NOT NULL,
   `numTelephone` varchar(30) DEFAULT NULL,
   `adresseEmail` varchar(50) DEFAULT NULL,
+  `idMethodePaiement` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idClient`),
-  UNIQUE KEY `nomUtilisateur` (`nomUtilisateur`)
+  UNIQUE KEY `nomUtilisateur` (`nomUtilisateur`),
+  KEY `idMethodePaiement` (`idMethodePaiement`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `habite`
+--
+
+CREATE TABLE IF NOT EXISTS `habite` (
+  `idClient` int(11) unsigned NOT NULL,
+  `idAdresse` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`idClient`,`idAdresse`),
+  KEY `idClient` (`idClient`,`idAdresse`),
+  KEY `idAdresse` (`idAdresse`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `methode_paiement`
+--
+
+CREATE TABLE IF NOT EXISTS `methode_paiement` (
+  `idMethodePaiement` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nomMethodePaiement` varchar(50) NOT NULL,
+  PRIMARY KEY (`idMethodePaiement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -145,11 +189,24 @@ ALTER TABLE `casquette`
   ADD CONSTRAINT `casquette_ibfk_1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Contraintes pour la table `client`
+--
+ALTER TABLE `client`
+  ADD CONSTRAINT `client_ibfk_1` FOREIGN KEY (`idMethodePaiement`) REFERENCES `methode_paiement` (`idMethodePaiement`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `habite`
+--
+ALTER TABLE `habite`
+  ADD CONSTRAINT `habite_ibfk_2` FOREIGN KEY (`idAdresse`) REFERENCES `adresse` (`idAdresse`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `habite_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `panier`
 --
 ALTER TABLE `panier`
-  ADD CONSTRAINT `panier_ibfk_2` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `panier_ibfk_2` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `survetement`
