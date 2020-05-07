@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 07 Mai 2020 à 09:38
+-- Généré le :  Jeu 07 Mai 2020 à 09:54
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.4.24
 
@@ -34,7 +34,14 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `rue` text NOT NULL,
   `complément` text,
   PRIMARY KEY (`idAdresse`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `adresse`
+--
+
+INSERT INTO `adresse` (`idAdresse`, `pays`, `ville`, `codePostal`, `rue`, `complément`) VALUES
+(1, 'USA', 'Ohio', '22399', 'Les marbriers', 'Bâtiment 5, porte de droite');
 
 -- --------------------------------------------------------
 
@@ -45,14 +52,22 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 CREATE TABLE IF NOT EXISTS `articles` (
   `idArticle` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomArticle` varchar(50) NOT NULL,
-  `typeArticle` int(20) NOT NULL,
+  `typeArticle` text NOT NULL,
   `quantite` int(11) NOT NULL,
   `prix` int(10) unsigned NOT NULL,
   `disponibilite` tinyint(1) NOT NULL,
   `couleur` varchar(20) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`idArticle`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `articles`
+--
+
+INSERT INTO `articles` (`idArticle`, `nomArticle`, `typeArticle`, `quantite`, `prix`, `disponibilite`, `couleur`, `description`) VALUES
+(1, 'Nike Noire', 'Basket', 5, 210, 1, 'Noir', 'Elles sont belles nos chaussures noires super chères'),
+(2, 'Casquette blanche', 'Casquette', 0, 500, 0, 'Blanc', 'Elle est chère mais belle!');
 
 -- --------------------------------------------------------
 
@@ -80,6 +95,13 @@ CREATE TABLE IF NOT EXISTS `baskets` (
   KEY `idArticle_2` (`idArticle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `baskets`
+--
+
+INSERT INTO `baskets` (`idArticle`, `pointure`) VALUES
+(1, 40);
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +114,13 @@ CREATE TABLE IF NOT EXISTS `casquette` (
   PRIMARY KEY (`idArticle`),
   KEY `idArticle` (`idArticle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `casquette`
+--
+
+INSERT INTO `casquette` (`idArticle`, `taille`) VALUES
+(2, 'L');
 
 -- --------------------------------------------------------
 
@@ -110,7 +139,14 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`idClient`),
   UNIQUE KEY `nomUtilisateur` (`nomUtilisateur`),
   KEY `idMethodePaiement` (`idMethodePaiement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `client`
+--
+
+INSERT INTO `client` (`idClient`, `nomUtilisateur`, `prenomClient`, `nomClient`, `numTelephone`, `adresseEmail`, `idMethodePaiement`) VALUES
+(1, 'Ninja', 'Richard', 'Blevins', '11122233344', 'ninja.ft@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -126,6 +162,13 @@ CREATE TABLE IF NOT EXISTS `habite` (
   KEY `idAdresse` (`idAdresse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `habite`
+--
+
+INSERT INTO `habite` (`idClient`, `idAdresse`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +179,15 @@ CREATE TABLE IF NOT EXISTS `methode_paiement` (
   `idMethodePaiement` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomMethodePaiement` varchar(50) NOT NULL,
   PRIMARY KEY (`idMethodePaiement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `methode_paiement`
+--
+
+INSERT INTO `methode_paiement` (`idMethodePaiement`, `nomMethodePaiement`) VALUES
+(1, 'visa'),
+(2, 'mastercard');
 
 -- --------------------------------------------------------
 
@@ -152,6 +203,13 @@ CREATE TABLE IF NOT EXISTS `panier` (
   KEY `idClient` (`idClient`),
   KEY `idArticle_2` (`idArticle`,`idClient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `panier`
+--
+
+INSERT INTO `panier` (`idArticle`, `idClient`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
