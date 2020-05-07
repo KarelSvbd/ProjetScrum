@@ -22,7 +22,15 @@
 
         <h3>Notre Bestseller</h3>
 
-        <div class="articleBestseller"></div>
+        <div class="articleBestseller"></div>  
+
+        <ul class="ulBestseller">
+            <li class="liBestseller">Produits de qualités (certifié par nos tests)</li>
+            <li class="liBestseller">Produits défiant peu concurance</li>
+            <li class="liBestseller"></li>
+        </ul>
+
+
 
         
 
