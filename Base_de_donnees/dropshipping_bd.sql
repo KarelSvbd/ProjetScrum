@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 07 Mai 2020 à 09:54
+-- Généré le :  Jeu 07 Mai 2020 à 11:36
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.4.24
 
@@ -90,17 +90,19 @@ CREATE TABLE IF NOT EXISTS `banane` (
 CREATE TABLE IF NOT EXISTS `baskets` (
   `idArticle` int(11) unsigned NOT NULL,
   `pointure` int(11) NOT NULL,
+  `idSexe` tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (`idArticle`),
   KEY `idArticle` (`idArticle`),
-  KEY `idArticle_2` (`idArticle`)
+  KEY `idArticle_2` (`idArticle`),
+  KEY `idSexe` (`idSexe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `baskets`
 --
 
-INSERT INTO `baskets` (`idArticle`, `pointure`) VALUES
-(1, 40);
+INSERT INTO `baskets` (`idArticle`, `pointure`, `idSexe`) VALUES
+(1, 40, 0);
 
 -- --------------------------------------------------------
 
@@ -214,14 +216,38 @@ INSERT INTO `panier` (`idArticle`, `idClient`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `sexe`
+--
+
+CREATE TABLE IF NOT EXISTS `sexe` (
+  `idSexe` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
+  `Sexe` varchar(20) NOT NULL,
+  PRIMARY KEY (`idSexe`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `sexe`
+--
+
+INSERT INTO `sexe` (`idSexe`, `Sexe`) VALUES
+(0, 'Unisex'),
+(1, 'Homme'),
+(2, 'Femme');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `survetement`
 --
 
 CREATE TABLE IF NOT EXISTS `survetement` (
   `idArticle` int(10) unsigned NOT NULL,
   `taille` varchar(5) NOT NULL,
+  `idSexe` tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (`idArticle`),
-  KEY `idArticle` (`idArticle`)
+  KEY `idArticle` (`idArticle`),
+  KEY `idSexe` (`idSexe`),
+  KEY `idSexe_2` (`idSexe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -238,6 +264,7 @@ ALTER TABLE `banane`
 -- Contraintes pour la table `baskets`
 --
 ALTER TABLE `baskets`
+  ADD CONSTRAINT `baskets_ibfk_2` FOREIGN KEY (`idSexe`) REFERENCES `sexe` (`idSexe`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `baskets_ibfk_1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -270,6 +297,7 @@ ALTER TABLE `panier`
 -- Contraintes pour la table `survetement`
 --
 ALTER TABLE `survetement`
+  ADD CONSTRAINT `survetement_ibfk_2` FOREIGN KEY (`idSexe`) REFERENCES `sexe` (`idSexe`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `survetement_ibfk_1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
