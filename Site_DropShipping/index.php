@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <?php require 'header.inc.php';?>
+            <?php require './pages/header.inc.php';?>
         </header>
         <h3>Nouvelle collection</h3>
         
