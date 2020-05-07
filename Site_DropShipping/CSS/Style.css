@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+}
+h1{
+    font-size: 150%;
+}
+#ligneRouge{
+    width: 100%;
+    height: 2%;
+    background-color: #990000;
+}
