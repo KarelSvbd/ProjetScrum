@@ -7,6 +7,9 @@
         
     </head>
     <body>
+        <header>
+            <?php require 'header.inc.php';?>
+        </header>
     </body>
 </html>
 <script src=""></script>
