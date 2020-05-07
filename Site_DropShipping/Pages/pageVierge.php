@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>A-Remplacer</title>
-        <link href="Site_DropShipping/CSS/Style.css" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Style.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
