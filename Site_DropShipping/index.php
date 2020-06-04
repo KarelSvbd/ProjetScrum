@@ -1,3 +1,11 @@
+<?php session_start();
+
+if(!isset($_SESSION["LoggedIn"]))
+{
+$_SESSION["LoggedIn"] = false;
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,16 +47,7 @@
 
 
         
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-
-
+<?php require_once './pages/Sidebar.inc.php';?>
     </body>
 </html>
 <script src="./JS/Script.js"></script>
