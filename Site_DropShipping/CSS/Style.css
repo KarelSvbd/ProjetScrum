@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:ital@1&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header > h1{
+    font-size: 150%;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    color:  red;
+}
+h3{
+  margin-top: 5vh;
+  margin-left: 2vw;
+}
+li{
+  list-style-type: none;
+}
+li > img{
+width: 16vw;
+height: 15vh;
+outline: 2px solid black;
+margin: 2vw;
+}
+h2{
+    margin-bottom: 0.5%;
+    font-size: 130%;
+    width: 100%;
+
+}
+#ligneRouge{
+    width: 100%;
+    height: 10%;
+    border : 1px solid black;
+    background-color: #990000;
+
+}
+#Bestseller > li{
+  width: fit-content;
+  float: left;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  #newCollection{
+    display: flex;
+    align-items: baseline;
+    justify-items: center;
+  }
+  span 
+  {
+    right: 0;
+    margin-right: 2vw;
+    position: absolute;
+    font-size: 40px;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+   right:0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  #baliseImgArticle{
+    border: 1px solid black;
+    width: 30%;
+    height: 30vh;
+    margin-top: 5%;
+    margin-left: 5%;
+    float : left;
+}
+#ulArguments{
+    float : left;
+    height: 30vh;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.liArguments{
+    height: 10vh;
+    color: #990000;
+    font-size: 300%;
+}
+#description{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 90%;
+    height: 20vh;
+    border: 1px solid black;
+    float: left;
+}
+#contCouleur{
+    width: 50%;
+    height: 5vh;
+    float: left;
+    margin-top: 5%;
+    margin-left: 25%;
+    text-align: center;
+
+}
+#contTaille{
+    width: 100%;
+    height: 5vh;
+    float: left;
+    margin-top: 2%;
+    text-align: center;
+}
+#btnCommander{
+    border: none;
+    padding: 15px 32px;
+    width: 25%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background-color: #990000;
+    font-size: 150%;
+    cursor: pointer;
+
+
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 38.5%;
+    margin-top: 2%;
+}
+
