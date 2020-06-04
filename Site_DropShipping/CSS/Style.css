@@ -107,18 +107,17 @@ body {
 
 
   #baliseImgArticle{
-    border: 1px solid black;
     width: 30%;
     height: 30vh;
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 15%;
     float : left;
 }
 #ulArguments{
     float : left;
     height: 30vh;
     margin-top: 5%;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 .liArguments{
     height: 10vh;
@@ -176,5 +175,9 @@ footer{
   bottom:0px;
   width: 100%;
   text-align: center;
+}
+
+#description{
+  font-size: 150%;
 }
 
