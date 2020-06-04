@@ -1,0 +1,1 @@
+<?php echo "<footer>Créé dans le cadre de l'atelier SCRUM - Par Fabio Rodrigues et Karel V. Svoboda</footer>";

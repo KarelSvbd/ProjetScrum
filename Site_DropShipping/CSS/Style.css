@@ -169,3 +169,12 @@ body {
     margin-top: 2%;
 }
 
+footer{
+  background-color: #111;
+  color: white;
+  position:absolute;
+  bottom:0px;
+  width: 100%;
+  text-align: center;
+}
+

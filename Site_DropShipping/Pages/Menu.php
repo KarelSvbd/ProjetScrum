@@ -13,3 +13,5 @@
     </body>
 </html>
 <script src=""></script>
+
+<?php require_once '../pages/footer.inc.php';?>

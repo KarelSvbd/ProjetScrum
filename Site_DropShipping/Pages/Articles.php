@@ -112,3 +112,5 @@
     </body>
 </html>
 <script src="../JS/Script.js"></script>
+
+<?php require_once '../pages/footer.inc.php';?>
